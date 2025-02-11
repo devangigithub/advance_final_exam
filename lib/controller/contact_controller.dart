@@ -113,21 +113,20 @@ class ContactController extends GetxController {
 
 
   Future<void> addContactDialog() async {
-    TextEditingController name = TextEditingController();
-    TextEditingController phone = TextEditingController();
-
+    String name = "";
+    String phone = "";
 
     Get.defaultDialog(
       title: 'Add Contact',
       content: Column(
         children: [
           TextField(
-           controller: name,
+            onChanged: (val) => name = val,
             decoration: InputDecoration(labelText: 'Name'),
             textCapitalization: TextCapitalization.words,
           ),
           TextField(
-           controller: phone,
+            onChanged: (val) => phone = val,
             decoration: InputDecoration(labelText: 'Phone'),
             keyboardType: TextInputType.phone,
           ),
